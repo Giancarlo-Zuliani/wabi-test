@@ -17,8 +17,7 @@
 <body>
     @include('components.header')
     <div id="animated-bg" style="background-image: url('{{asset('storage/snow.gif')}}')"></div>
-     
-    <section>
+    <section class="container-fluid">
         @yield('main-section')
     </section>
 

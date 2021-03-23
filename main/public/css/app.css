@@ -10972,11 +10972,18 @@ a:hover {
   text-decoration: underline;
 }
 
+.prj-box {
+  z-index: 1;
+  height: 250px;
+  background-color: red;
+}
+
 header {
   color: white;
 }
 
 header #navbar {
+  z-index: 999;
   left: 0;
   right: 0;
   top: 0;
