@@ -29,6 +29,10 @@ a {
 
 .prj-box {
     z-index: 1;
-    height: 250px;
     background-color: red;
+    h2 {
+        position: absolute;
+        left: 5px;
+        top: 10px;
+    }
 }

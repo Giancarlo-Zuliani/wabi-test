@@ -20,6 +20,8 @@
     <section class="container-fluid">
         @yield('main-section')
     </section>
+    
+    @include('components.bottom-jumbotron')
 
     @include('components.footer')
 </body>

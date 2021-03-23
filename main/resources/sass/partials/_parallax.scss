@@ -1,0 +1,22 @@
+#bottom-jumbotron {
+    height: 100vh;
+}
+
+#parallax {
+    background-position: bottom;
+    padding: 20vh;
+    margin-bottom: 2500px;
+    background-size: cover!important;
+}
+
+@media screen and(max-width:660px) {
+    #parallax {
+        background-size: contain;
+    }
+}
+
+@media screen and(min-width:661px) {
+    #parallax {
+        background-attachment: fixed!important;
+    }
+}
