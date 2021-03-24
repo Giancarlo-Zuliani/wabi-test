@@ -11036,3 +11036,7 @@ header #jumbotron h1 {
   }
 }
 
+.grecaptcha-badge {
+  color: purple !important;
+}
+
