@@ -12,4 +12,7 @@ class MainController extends Controller
         $projects = Project::all();
         return view('pages.index' , compact('projects')); 
     }
+    public function login(){
+        return view('pages.login');
+    }
 }
