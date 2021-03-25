@@ -11005,12 +11005,23 @@ header #navbar img {
   height: 70%;
 }
 
-header #jumbotron {
+#upper-jumbotron {
+  color: white;
   height: 100vh;
 }
 
-header #jumbotron h1 {
+#upper-jumbotron h1 {
   font-size: 11vw;
+}
+
+footer {
+  background-color: #000;
+  min-height: 30vh;
+}
+
+footer hr {
+  background-color: #fff;
+  pading: 1px;
 }
 
 #bottom-jumbotron {

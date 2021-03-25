@@ -25,16 +25,19 @@
     @include('components.header')
         <div id="animated-bg" style="background-image: url('{{asset('storage/snow.gif')}}')"></div>
     
+    @include('components.upper-jumbotron')
+    
     <section class="container-fluid">
         @yield('main-section')
     </section>
+    
+    
+    @include('components.bottom-jumbotron')
     
     <section>
         @yield('clients-logos')
     </section>
     
-    @include('components.bottom-jumbotron')
-
     @include('components.footer')
 
     @auth

@@ -13,10 +13,12 @@ header {
             height: 70%;
         }
     }
-    #jumbotron {
-        height: 100vh;
-        h1 {
-            font-size: 11vw;
-        }
+}
+
+#upper-jumbotron {
+    color: white;
+    height: 100vh;
+    h1 {
+        font-size: 11vw;
     }
 }
