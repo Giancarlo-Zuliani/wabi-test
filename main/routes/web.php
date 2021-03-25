@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Auth\Events\Logout;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'MainController@index')
-        -> name('index');
-Route::get('/login' ,'MainController@login')
-        -> name('login');
-
 Auth::routes();
 
-Route::get('/home', 'MainController@index')->name('home');
+Route::get('/home', 'MainController@index')
+        -> name('index');
+
+Route::get('/', 'MainController@index')
+        -> name('index');
+
+        Route::get('/login' ,'MainController@login')
+        -> name('login');
+Route::get('/dashboard' , 'MainController@dashboard')
+        -> name('dashboard');
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::post('/store-proj' , 'MainController@storeproject')
+        -> name('store-project');
