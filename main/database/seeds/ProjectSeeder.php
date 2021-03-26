@@ -14,12 +14,6 @@ class ProjectSeeder extends Seeder
      */
     public function run()
     {
-        factory(Project::class, 16)
-            ->make()
-            ->each(function($proj){
-                $user = User::inRandomOrder() -> first();
-                $proj -> user() -> associate($user);
-                $proj -> save();
-            });
+        factory(Project::class, 8) -> create();
     }
 }

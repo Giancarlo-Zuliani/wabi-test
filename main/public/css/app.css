@@ -10972,10 +10972,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.prj-box {
-  z-index: 1;
-}
-
 .prj-box h2 {
   position: absolute;
   left: 5px;
@@ -11113,8 +11109,7 @@ footer hr {
 }
 
 #parallax {
-  background-position: bottom;
-  padding: 20vh;
+  padding: 25vh;
   margin-bottom: 2500px;
   background-size: cover !important;
 }

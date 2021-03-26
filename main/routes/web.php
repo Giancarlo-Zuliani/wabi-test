@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Events\Logout;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,16 +13,18 @@ use Illuminate\Auth\Events\Logout;
 |
 */
 
-Auth::routes();
 
 Route::get('/home', 'MainController@index')
         -> name('index');
 
+Auth::routes();
+
 Route::get('/', 'MainController@index')
         -> name('index');
 
-        Route::get('/login' ,'MainController@login')
+Route::get('/login' ,'MainController@login')
         -> name('login');
+
 Route::get('/dashboard' , 'MainController@dashboard')
         -> name('dashboard');
 
@@ -31,3 +32,7 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::post('/store-proj' , 'MainController@storeproject')
         -> name('store-project');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
