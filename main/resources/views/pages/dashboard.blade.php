@@ -4,36 +4,46 @@
     <script src="{{asset('js/dashboard.js')}}" defer ></script>
 @endpush
 
-@include ('components.header')
-
-@if (Route::has('login'))
-<div class="top-right links">
-    @auth
-        <a href="{{ url('/home') }}">Home</a>
-    @else
-        <a href="{{ route('login') }}">Login</a>
-        <h1 style="color:white">Area riservata</h1>        
-        @endauth
+@section('content')
+<div id="dashboard-header" class="text-center">
+    <img src="https://www.wabi.it/img/logo.svg" alt="">
+</div>
+<div id="dashboard" class="container m-auto pt-5 w-75">
+    <div class="row">
+        @foreach ($projects as $project)
+        <div class="col-12 my-5">
+            <h3>{{$project -> title}}</h3>
+            <hr>
+            @foreach ( $project -> pictures  as $pic)
+            <div class="image-container">
+                <img class="dashboard-images" src="{{asset('storage/projects-resources/' . $pic -> url)}}" alt="{{$pic -> description}}">
+                <i class="fas fa-trash"></i>    
+            </div>
+            @endforeach
+        </div>
+        <div class="col-12 text-center">
+            <a href="#"><i class="fas fa-plus-square"></i></a>
+            <form action="{{route('update-image' , $project -> id)}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('POST')
+                <input name="img" type="file">
+                <input name="description" type="text">
+                <input type="submit" value="salva">
+            </form>
+        </div>
+        @endforeach
     </div>
-@endif
+</div>
 
-@foreach ($projects as $project)
-    <div>
-        {{$project -> title}}
-    </div>
-@endforeach
-
-<button id="banner-show" onclick="">aggiungi un progetto</button>
 <div id="add-proj-dropdown">
     <form action="{{route('store-project')}}" method="POST">
         @csrf
         @method('POST')
         <input type="text" name="title">
         <input type="text" name="description">
-   
         <input type="submit" value="go!">
     </form>
 </div>
+@endsection
 
-@include ('components.footer')
 

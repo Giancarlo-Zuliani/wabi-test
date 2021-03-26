@@ -1,0 +1,55 @@
+#dashboard-header {
+    width: 100%;
+    height: 150px;
+    img {
+        width: 15%;
+    }
+}
+
+#dashboard {
+    hr {
+        width: 100%;
+        margin: auto;
+        height: 1px;
+        padding: 1px;
+        background-color: white;
+    }
+    h3 {
+        font-size: 1.4rem;
+        color: white;
+    }
+}
+
+.image-container {
+    width: 49%;
+    padding: 15px;
+    display: inline-block;
+    position: relative;
+    .dashboard-images {
+        width: 100%;
+    }
+    &:hover .fa-trash {
+        display: block;
+    }
+    .fa-trash {
+        display: none;
+        font-size: 1.6rem;
+        color: red;
+        position: absolute;
+        left: 50%;
+        bottom: 15%;
+        transform: translateX(-50%);
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.fa-plus-square {
+    font-size: 5rem;
+    color: green;
+    transition: color ease .2s;
+    &:hover {
+        color: yellow;
+    }
+}

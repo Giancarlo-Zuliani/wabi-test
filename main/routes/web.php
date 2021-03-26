@@ -33,6 +33,7 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::post('/store-proj' , 'MainController@storeproject')
         -> name('store-project');
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/add-image/{id}' , 'MainController@updateImage')
+        -> name('update-image');
