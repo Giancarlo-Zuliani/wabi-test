@@ -5,8 +5,8 @@
     <div class="row">
         @foreach($projects as $project)
         <div class="prj-box col-md-6 p-0 m-0">
-            <img style="width:100%" src="{{asset('storage/12345678959.jpg')}}" alt="">
-            <h2>{{$project -> pictures[0] -> url}}</h2>
+            <img style="width:100%" src="{{asset('storage/projects-resources/' . $project -> pictures[0] -> url)}}" alt="">
+            <h2>{{$project -> title}}</h2>
         </div>
         <div class="modal" id="modal_wait" tabindex="-1" role="dialog" data-backdrop="static">
             <div class="modal-dialog" role="document">
@@ -18,7 +18,7 @@
                                 <div class="close" ></div>
                                 @foreach( $project -> pictures as $pic )
                                 <div class="carousel-item {{$loop -> index == 0 ? 'active' : '' }} ">
-                                    <img class="d-block w-100" src="{{asset('storage/12345678959.jpg')}}" alt="{{$pic -> url}}">
+                                    <img class="d-block w-100" src="{{asset('storage/projects-resources/' . $pic -> url)}}" alt="{{$pic -> description}}">
                                 </div>
                                 @endforeach
                             </div>

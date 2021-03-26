@@ -6,7 +6,9 @@ use App\Picture;
 use Faker\Generator as Faker;
 
 $factory->define(Picture::class, function (Faker $faker) {
+    $picArr = ['maeg.png' , 'bancai.png' , 'palace.png' , 'anonimacastelli.png' , 'book.png' ,'corolla.png'];
     return [
-        'url' => $faker -> word
+        'url' => $picArr[rand(0 , count($picArr) - 1)],
+        'description' => $faker -> sentence
     ];
 });

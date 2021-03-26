@@ -17,6 +17,7 @@ class CreatePicturesTable extends Migration
             $table->id();
             $table->bigInteger('project_id') -> unsigned() -> nullable();
             $table->string('url');
+            $table -> string('description');
             $table->timestamps();
         });
     }
