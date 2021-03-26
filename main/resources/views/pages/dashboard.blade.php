@@ -5,8 +5,19 @@
 @endpush
 
 @section('content')
-<div id="dashboard-header" class="text-center">
+<div id="dashboard-header" class="text-center my-5">
     <img src="https://www.wabi.it/img/logo.svg" alt="">
+</div>
+<div>
+    <form action="{{route('create-project')}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('POST')
+        <input type="text" name="title" placeholder="new project name">
+        <input type="text" name="description" placeholder="new project description">
+        <input type="file" name="propic">
+        <input type="text" name="imgcaption" placeholder="image caption">
+        <input type="submit" value="salva nuovo progetto">
+    </form>
 </div>
 <div id="dashboard" class="container m-auto pt-5 w-75">
     <div class="row">
@@ -17,7 +28,9 @@
             @foreach ( $project -> pictures  as $pic)
             <div class="image-container">
                 <img class="dashboard-images" src="{{asset('storage/projects-resources/' . $pic -> url)}}" alt="{{$pic -> description}}">
-                <i class="fas fa-trash"></i>    
+                <a href="{{route('delete-image', $pic -> id)}}">
+                    <i class="fas fa-trash"></i>    
+                </a>
             </div>
             @endforeach
         </div>

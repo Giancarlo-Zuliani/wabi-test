@@ -37,3 +37,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/add-image/{id}' , 'MainController@updateImage')
         -> name('update-image');
+Route::get('/delete/{id}' , 'MainController@deleteImage')
+        -> name('delete-image');
+Route::post('/create-project' , 'MainController@createProject')
+        -> name('create-project');
