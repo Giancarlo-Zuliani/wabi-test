@@ -22,9 +22,6 @@ class MainController extends Controller
     }
     public function storeproject(Request $request){
         $data = $request -> all();
-        Validate={[
-            name :
-        ]};
         dd($data);
     }
 }

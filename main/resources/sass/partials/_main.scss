@@ -29,10 +29,90 @@ a {
 
 .prj-box {
     z-index: 1;
-    background-color: red;
     h2 {
         position: absolute;
         left: 5px;
         top: 10px;
     }
+    img {
+        width: 100%;
+        transition: background-size ease .4s;
+    }
+    &:hover img {
+        opacity: 1;
+        -webkit-animation: flash 1.5s;
+        animation: flash 1.5s;
+        cursor: pointer;
+    }
+}
+
+.carousel-item {
+    max-width: 100%;
+}
+
+#modal_wait {
+    min-width: 100%;
+    margin: 0;
+}
+
+#modal_wait .modal-content {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+#modal_wait .modal-dialog {
+    min-width: 100%;
+    margin: 0;
+}
+
+@-webkit-keyframes flash {
+    0% {
+        opacity: .4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: .4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.9;
+    z-index: 9999;
+}
+
+.close:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.close:before,
+.close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 3px;
+    background-image: url('https://www.wabi.it/img/snow.gif');
+    opacity: .32;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
 }
