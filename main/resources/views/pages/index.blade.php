@@ -19,6 +19,10 @@
                                 @foreach( $project -> pictures as $pic )
                                 <div class="carousel-item {{$loop -> index == 0 ? 'active' : '' }} ">
                                     <img class="d-block w-100" src="{{asset('storage/projects-resources/' . $pic -> url)}}" alt="{{$pic -> description}}">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>{{$project -> title}}</h5>
+                                        <p>{{$pic -> description}}</p>
+                                      </div>
                                 </div>
                                 @endforeach
                             </div>
