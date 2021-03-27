@@ -5,7 +5,7 @@
             <a href="{{ url('/dashboard') }}">Dashboard</a>
             <a href="{{'/logout'}}">logout</a>
             @else
-            <a href="#">start a project</a>
+            <a href="{{route('contact-form')}}">start a project</a>
         @endauth
     </div>
 </header>

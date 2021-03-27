@@ -41,3 +41,7 @@ Route::get('/delete/{id}' , 'MainController@deleteImage')
         -> name('delete-image');
 Route::post('/create-project' , 'MainController@createProject')
         -> name('create-project');
+Route::get('/contactform' , 'MainController@contactForm')
+        ->name('contact-form');
+Route::post('/contacform/send' , 'MainController@sendContactMail')
+        -> name('send-mail');
