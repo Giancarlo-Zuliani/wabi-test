@@ -55,8 +55,11 @@ L.tileLayer.grayscale = function(url, options) {
     return new L.TileLayer.Grayscale(url, options);
 };
 
+let icon = new L.Icon.Default();
+icon.options.shadowSize = [0, 0];
+
+L.marker(coord, { icon: icon }).addTo(map);
+
 L.tileLayer.grayscale('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
 }).addTo(map);
-
-L.marker([45.87023881566037, 12.374845713747328], ).addTo(map);
