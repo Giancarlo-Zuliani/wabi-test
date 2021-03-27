@@ -10973,6 +10973,7 @@ a:hover {
 }
 
 .prj-box h2 {
+  color: white;
   position: absolute;
   left: 5px;
   top: 10px;
@@ -10985,8 +10986,8 @@ a:hover {
 
 .prj-box:hover img {
   opacity: 1;
-  -webkit-animation: flash 1.5s;
-  animation: flash 1.5s;
+  -webkit-animation: flash 1.8s;
+  animation: flash 1.8s;
   cursor: pointer;
 }
 
@@ -11007,6 +11008,12 @@ a:hover {
 #modal_wait .modal-dialog {
   min-width: 100%;
   margin: 0;
+}
+
+.carousel-description {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bolder;
 }
 
 @-webkit-keyframes flash {
@@ -11050,7 +11057,7 @@ a:hover {
   left: 15px;
   content: " ";
   height: 33px;
-  width: 3px;
+  width: 9px;
   background-image: url("https://www.wabi.it/img/snow.gif");
   opacity: 0.32;
 }
@@ -11061,6 +11068,37 @@ a:hover {
 
 .close:after {
   transform: rotate(-45deg);
+}
+
+#bottom-jumbotron {
+  padding-top: 250px;
+  height: 110vh;
+}
+
+#bottom-jumbotron h1 {
+  color: white;
+  min-width: 100%;
+  font-size: 6vw;
+  padding-left: 15%;
+}
+
+#bottom-jumbotron h1:before {
+  content: "";
+  padding: 1px;
+  width: 8%;
+  position: absolute;
+  background-color: white;
+  top: 30%;
+  left: 5%;
+}
+
+#bottom-jumbotron p {
+  font-size: 3vh;
+}
+
+#clients-title {
+  color: #fff;
+  font-size: 1.5rem;
 }
 
 header {
@@ -11085,13 +11123,28 @@ header #navbar img {
   height: 70%;
 }
 
+header #navbar a {
+  font-size: 1.2rem;
+}
+
 #upper-jumbotron {
   color: white;
   height: 100vh;
+  margin-top: 30%;
 }
 
 #upper-jumbotron h1 {
-  font-size: 11vw;
+  font-size: 9vw;
+}
+
+#upper-jumbo-text::before {
+  content: "";
+  width: 9%;
+  padding: 1px;
+  background-color: white;
+  position: absolute;
+  left: 11%;
+  top: 43%;
 }
 
 footer {
@@ -11112,7 +11165,7 @@ footer hr {
 
 #parallax {
   padding: 25vh;
-  margin-bottom: 2500px;
+  margin-bottom: 50px;
   background-size: cover !important;
 }
 

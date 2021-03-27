@@ -29,6 +29,7 @@ a {
 
 .prj-box {
     h2 {
+        color: white;
         position: absolute;
         left: 5px;
         top: 10px;
@@ -39,8 +40,8 @@ a {
     }
     &:hover img {
         opacity: 1;
-        -webkit-animation: flash 1.5s;
-        animation: flash 1.5s;
+        -webkit-animation: flash 1.8s;
+        animation: flash 1.8s;
         cursor: pointer;
     }
 }
@@ -62,6 +63,12 @@ a {
 #modal_wait .modal-dialog {
     min-width: 100%;
     margin: 0;
+}
+
+.carousel-description {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bolder;
 }
 
 @-webkit-keyframes flash {
@@ -103,7 +110,7 @@ a {
     left: 15px;
     content: ' ';
     height: 33px;
-    width: 3px;
+    width: 9px;
     background-image: url('https://www.wabi.it/img/snow.gif');
     opacity: .32;
 }
@@ -114,4 +121,32 @@ a {
 
 .close:after {
     transform: rotate(-45deg);
+}
+
+#bottom-jumbotron {
+    padding-top: 250px;
+    height: 110vh;
+    h1 {
+        color: white;
+        min-width: 100%;
+        font-size: 6vw;
+        padding-left: 15%;
+        &:before {
+            content: "";
+            padding: 1px;
+            width: 8%;
+            position: absolute;
+            background-color: white;
+            top: 30%;
+            left: 5%;
+        }
+    }
+    p {
+        font-size: 3vh;
+    }
+}
+
+#clients-title {
+    color: #fff;
+    font-size: 1.5rem;
 }

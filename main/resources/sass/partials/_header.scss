@@ -12,13 +12,27 @@ header {
         img {
             height: 70%;
         }
+        a {
+            font-size: 1.2rem;
+        }
     }
 }
 
 #upper-jumbotron {
     color: white;
     height: 100vh;
+    margin-top: 30%;
     h1 {
-        font-size: 11vw;
+        font-size: 9vw;
     }
+}
+
+#upper-jumbo-text::before {
+    content: "";
+    width: 9%;
+    padding: 1px;
+    background-color: white;
+    position: absolute;
+    left: 11%;
+    top: 43%;
 }
