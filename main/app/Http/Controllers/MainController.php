@@ -96,6 +96,26 @@ class MainController extends Controller
     }
     public function sendContactMail(Request $request){
         $form = $request -> all();
+        Validator::make($form , [
+            'mailObject' => 'required',
+            'name' => 'required | min:3',
+            'company-name' => 'required | min:3',
+            'mail' => 'required',
+            'contact' => 'required',
+            'message' => 'required | min:25',
+            'privacy' => 'required'
+        ],[
+            'mailObject.required' => 'Inserisci la motivazione del contatto',
+            'name.min' => 'Almeno 3 caratteri per il nome',
+            'name.required' => 'Nome richiesto',
+            'company-name.min' => 'Almeno 3 caratteri per il nome dell`azienda',
+            'company-name.required' => 'Nome azienda richiesto',
+            'mail.required' => 'Indirizzo mail richiesto',
+            'contact.required' => 'Dicci dove ci hai conosciuto',
+            'message.min' => 'Almeno 25 caratteri nel messaggio',
+            'privacy.required' => 'Accetta la clausula sulla privacy',    
+        ]) -> validate();
+
         $myMail = 'slaigox@gmail.com';
         Mail::to($myMail) -> send(new contactForm($form));
         return redirect() -> route('index');

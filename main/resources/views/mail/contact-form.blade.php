@@ -7,6 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-  {{$form['name']}}
+  <div style="text-align:center;width:80%; margin:25px auto">
+    <h2>{{$form['mailObject']}}</h2>
+    <ul>
+        <li>Nome : {{$form['name']}}</li>
+        <li>Nome azienda : {{$form['company-name']}}</li>
+        <li>Mail : {{$form['mail']}}</li>
+        <li>conosciuti da : {{$form['contact']}}</li>
+    </ul>
+    <div>
+        <p>
+            {{$form['message']}}
+        </p>
+    </div>
+  </div>
 </body>
 </html>

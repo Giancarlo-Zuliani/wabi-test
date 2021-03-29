@@ -26,21 +26,41 @@
                            <option value="Consulenza">Chiedere una consulenza</option>
                            <option value="Altre info">Altro</option>
                         </select>
+                        @error('mailObject')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span> 
+                        @enderror
                     </div>  
                   </div>  
                   <div class="col-12 col-md-6">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Nome*" required>
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span> 
+                        @enderror
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
                     <div class="form-group">
                         <input type="text" name="company-name" placeholder="Nome della tua azienda*" required>
+                        @error('company-name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span> 
+                        @enderror
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
                         <input type="mail" name="mail" placeholder="Indirizzo email*" required>
+                        @error('mail')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span> 
+                        @enderror
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
@@ -57,11 +77,21 @@
                             <option value="mi hanno parlato di voi">mi hanno parlato di voi</option>
                             <option value="altro">altro</option>
                         </select>
+                        @error('contact')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span> 
+                        @enderror
                     </div>
                   </div>
                   <div class="col-12">
                       <div class="form-group">
                             <input type="textarea" placeholder="Raccontaci brevemente il tuo progetto" rows="1" name="message" id="" required></textarea>
+                            @error('message')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span> 
+                            @enderror  
                       </div>
                   </div>
                   <div id="checkboxes-contactform" class="col-12">
@@ -69,12 +99,24 @@
                        <div class="d-flex align-items-baseline">
                            <input type="checkbox" name="privacy" id="" required>
                            <label for="privacy">(Richiesto) Acconsento al trattamento dei dati personali - informativa</label> 
+                            <br>
+                            @error('privacy')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span> 
+                            @enderror 
                         </div>
                     </div>
                     <div class="form-group ">
                         <div class="d-flex align-items-baseline">
                             <input type="checkbox" name="marketing" id="">
                             <label for="marketing">(Facoltativo) Acconsento al trattamento dei dati per fini commerciali e di marketing</label> 
+                            <br>
+                            @error('marketing')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span> 
+                            @enderror 
                         </div>
                     </div>
                   </div>
