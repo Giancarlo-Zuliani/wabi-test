@@ -45,3 +45,5 @@ Route::get('/contactform' , 'MainController@contactForm')
         ->name('contact-form');
 Route::post('/contacform/send' , 'MainController@sendContactMail')
         -> name('send-mail');
+Route::get('/delete-project/{id}' , 'MainController@deleteProject')
+        -> name('delete-project'); 

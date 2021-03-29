@@ -8,3 +8,16 @@ for (let i = 0; i < addButtons.length; i++) {
             pictureForms[i].style.display = "block";
     })
 }
+
+let deleteProjectsButtons = document.getElementsByClassName('dashboard-delete-button');
+let deleteModals = document.getElementsByClassName('dashboard-delete-project-modal');
+let closeModal = document.getElementsByClassName('dashboard-close-modal-button');
+
+for (let i = 0; i < deleteProjectsButtons.length; i++) {
+    deleteProjectsButtons[i].addEventListener('click', function() {
+        deleteModals[i].style.display = "block";
+    })
+    closeModal[i].addEventListener('click', function() {
+        deleteModals[i].style.display = "none";
+    })
+}

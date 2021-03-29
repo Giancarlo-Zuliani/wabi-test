@@ -30,11 +30,18 @@ class MainController extends Controller
         return view('pages.dashboard' , compact('projects'));
     }
     public function updateImage(Request $request ,$id){
+        $data = $request -> all();
+        Validator::make([
+            'description' => 'required,min:5',
+            'img' => 'required'
+        ],[
+            'description.required' => 'Descrizione immagine richiesta',
+            'description.min' => 'Minimo 5 caratterin per la descrizione dell`immagine',
+            'img.required' => 'immagine richiesta'
+        ]) -> validate();
+
         $image = $request -> file('img');
-        $ext = $image -> getClientOriginalExtension();
-        $name = rand(10000,99999) .'_'.time();
-        $destfile = $name . '.' . $ext;
-        $image -> storeAs('projects-resources' , $destfile ,'public');
+        $destfile = $this -> storeImage($image);
         $newpic = ['url' => $destfile , 'description' => $request -> description];
         $new = Picture::make($newpic);
         $prj = Project::findOrFail($id);
@@ -53,7 +60,7 @@ class MainController extends Controller
             }catch(\exception $e){};
             return redirect() -> back();
         }else{
-            return redirect() -> back()->withErrors(['ogni progetto deve avere almeno un immagine']);
+            return redirect() -> back()->withErrors(['lastpic'=>'ogni progetto deve avere almeno un immagine']);
         }
     }
     public function createProject(Request $request){
@@ -75,10 +82,7 @@ class MainController extends Controller
 
         $prj = ['title' => $request -> title , 'description' => $request -> description];
         $image = $request -> file('propic');
-        $ext = $image -> getClientOriginalExtension();
-        $name = rand(10000,99999) .'_'.time();
-        $destfile = $name . '.' . $ext;
-        $image -> storeAs('projects-resources' , $destfile ,'public');
+        $destfile = $this -> storeImage($image);
         $newpic = ['url' => $destfile , 'description' => $request -> imgcaption];
         $new = Picture::make($newpic);
         $project = Project::make($prj);
@@ -99,5 +103,25 @@ class MainController extends Controller
             ->subject($message -> mailObject);
         });
         return redirect() -> route('index');
+    }
+    public function deleteProject($id){
+        $project = Project::findOrFail($id);
+        $immages = $project -> pictures() -> get();
+        foreach($immages as $img){
+            try{
+                $file = storage_path('app/public/projects-resources/' . $img);
+                File::delete($file); 
+            }catch(\exception $e){};
+            $img -> delete(); 
+        };
+        $project -> delete();
+        return redirect() -> back();
+    }
+    private function storeImage($img){
+        $ext = $img -> getClientOriginalExtension();
+        $name = rand(10000,99999) .'_'.time();
+        $destfile = $name . '.' . $ext;
+        $img -> storeAs('projects-resources' , $destfile ,'public');
+        return $destfile;
     }
 }
