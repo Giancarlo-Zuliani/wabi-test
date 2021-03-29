@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Mail\contacForm;
+use App\Mail\contactForm;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
@@ -95,13 +95,9 @@ class MainController extends Controller
         return view('pages.contactform');
     }
     public function sendContactMail(Request $request){
+        $form = $request -> all();
         $myMail = 'slaigox@gmail.com';
-        Mail::send(new contacForm($request),$request ->all(), function ($message){
-            $message->from($message -> email)
-            ->to('slaigox@gmail.com')
-            ->from($message -> email)
-            ->subject($message -> mailObject);
-        });
+        Mail::to($myMail) -> send(new contactForm($form));
         return redirect() -> route('index');
     }
     public function deleteProject($id){

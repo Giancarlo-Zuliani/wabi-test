@@ -104,7 +104,7 @@
                                 <strong>{{ $message }}</strong>
                             </span> 
                         @enderror
-                    <input name="description" type="text" value="descrizione immagine" required>
+                    <input name="description" type="text" placeholder="descrizione immagine" required>
                         @error('description')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

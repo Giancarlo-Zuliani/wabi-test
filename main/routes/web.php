@@ -43,7 +43,7 @@ Route::post('/create-project' , 'MainController@createProject')
         -> name('create-project');
 Route::get('/contactform' , 'MainController@contactForm')
         ->name('contact-form');
-Route::post('/contacform/send' , 'MainController@sendContactMail')
+Route::post('/contactform/send' , 'MainController@sendContactMail')
         -> name('send-mail');
 Route::get('/delete-project/{id}' , 'MainController@deleteProject')
         -> name('delete-project'); 

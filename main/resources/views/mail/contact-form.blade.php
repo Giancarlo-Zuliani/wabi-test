@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    ciaoi
+  {{$form['name']}}
 </body>
 </html>
