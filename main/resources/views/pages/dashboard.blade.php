@@ -5,20 +5,34 @@
 @endpush
 
 @section('content')
-<div id="dashboard-header" class="text-center my-5">
-    <img src="https://www.wabi.it/img/logo.svg" alt="">
+<div id="dashboard-header" class="text-center my-5 py-5">
+    <img class="vertical" src="https://www.wabi.it/img/logo.svg" alt="">
 </div>
-<div>
-    <form action="{{route('create-project')}}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('POST')
-        <input type="text" name="title" placeholder="new project name">
-        <input type="text" name="description" placeholder="new project description">
-        <input type="file" name="propic">
-        <input type="text" name="imgcaption" placeholder="image caption">
-        <input type="submit" value="salva nuovo progetto">
-    </form>
+<div class="container">
+    <div class="row">
+        @if($errors)
+        <h4>{{$errors -> first()}}</h4>
+        @endif
+    </div>
 </div>
+<div class="container text-center" id="dashboard-console">
+        <form class="row text-center w-100 m-auto" action="{{route('create-project')}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('POST')
+            <div class="col-12 m-auto">
+                <input type="text" name="title" placeholder="new project name" required>
+                <input type="text" name="description" placeholder="new project description" required>
+            </div>
+            <div class="col-12 m-auto">
+                <input type="file" name="propic" required>
+                <input type="text" name="imgcaption" placeholder="image caption" required>
+            </div>
+            <div class="col-12 m-auto">    
+                <button type="submit">Salva</button>
+            </div>
+        </form>
+</div>
+
 <div id="dashboard" class="container m-auto pt-5 w-75">
     <div class="row">
         @foreach ($projects as $project)
@@ -35,27 +49,19 @@
             @endforeach
         </div>
         <div class="col-12 text-center">
-            <a href="#"><i class="fas fa-plus-square"></i></a>
-            <form action="{{route('update-image' , $project -> id)}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('POST')
-                <input name="img" type="file">
-                <input name="description" type="text">
-                <input type="submit" value="salva">
-            </form>
+           <i class="fas fa-plus-square"></i>
+            <div class="hidden-picture-form">
+                <form action="{{route('update-image' , $project -> id)}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('POST')
+                    <input name="img" type="file" required>
+                    <input name="description" type="text" value="descrizione immagine" required>
+                    <button type="submit">Aggiungi immagine</button>
+                </form>
+            </div>
         </div>
         @endforeach
     </div>
-</div>
-
-<div id="add-proj-dropdown">
-    <form action="{{route('store-project')}}" method="POST">
-        @csrf
-        @method('POST')
-        <input type="text" name="title">
-        <input type="text" name="description">
-        <input type="submit" value="go!">
-    </form>
 </div>
 @endsection
 

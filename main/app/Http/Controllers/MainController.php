@@ -27,10 +27,6 @@ class MainController extends Controller
         $projects = Project::all();
         return view('pages.dashboard' , compact('projects'));
     }
-    public function storeproject(Request $request){
-        $data = $request -> all();
-        dd($data);
-    }
     public function updateImage(Request $request ,$id){
         $image = $request -> file('img');
         $ext = $image -> getClientOriginalExtension();
@@ -46,15 +42,21 @@ class MainController extends Controller
     }
     public function deleteImage($id){
         $img = Picture::findOrFail($id);
-        $img -> delete();
-        try{
-            $file = storage_path('app/public/projects-resources/' . $img);
-            File::delete($file); 
-        }catch(\exception $e){};
-        return redirect() -> back();
+        $project = $img -> project;
+        if(count($project -> pictures) > 1){
+            $img -> delete();
+            try{
+                $file = storage_path('app/public/projects-resources/' . $img);
+                File::delete($file); 
+            }catch(\exception $e){};
+            return redirect() -> back();
+        }else{
+            return redirect() -> back()->withErrors(['ogni progetto deve avere almeno un immagine']);
+        }
     }
     public function createProject(Request $request){
         $data = $request -> all();
+        dd($data);
         $prj = ['title' => $request -> title , 'description' => $request -> description];
         $image = $request -> file('propic');
         $ext = $image -> getClientOriginalExtension();

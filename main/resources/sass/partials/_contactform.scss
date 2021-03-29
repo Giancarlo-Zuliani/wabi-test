@@ -21,6 +21,9 @@
             padding: 12px 0;
             color: white;
             width: 100%;
+            &:focus-visible {
+                outline: none;
+            }
         }
         select {
             width: 100%;
@@ -29,6 +32,10 @@
             border-bottom: solid white 2px;
             padding: 12px 0;
             color: white;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-indent: 1px;
+            text-overflow: '';
         }
     }
     button[type=submit] {
@@ -60,4 +67,14 @@
     height: 100vh;
     padding: 0!important;
     margin: 0!important;
+}
+
+.fa-sort-down {
+    position: absolute;
+    font-size: 25px;
+    right: 30px;
+    top: 75%;
+    &:hover {
+        cursor: pointer;
+    }
 }

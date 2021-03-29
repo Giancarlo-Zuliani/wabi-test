@@ -11696,7 +11696,7 @@ a:hover {
 }
 
 #bottom-jumbotron {
-  padding-top: 250px;
+  padding-top: 20%;
   height: 110vh;
 }
 
@@ -11867,6 +11867,51 @@ footer hr {
   color: yellow;
 }
 
+#dashboard-console {
+  margin-top: 15%;
+}
+
+#dashboard-console input {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid white 2px;
+  padding: 12px 0;
+  color: white;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+#dashboard-console input:focus-visible {
+  outline: none;
+}
+
+#dashboard-console button[type=submit] {
+  width: 25%;
+  margin: 5% auto 0;
+  height: 4vh !important;
+  border: none;
+}
+
+.hidden-picture-form {
+  display: none;
+  width: 80%;
+  margin: 5% auto;
+}
+
+.hidden-picture-form input {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid white 2px;
+  padding: 12px 0;
+  color: white;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.hidden-picture-form input:focus-visible {
+  outline: none;
+}
+
 #contact-form-header {
   width: 15%;
   margin: auto;
@@ -11896,6 +11941,10 @@ footer hr {
   width: 100%;
 }
 
+#contactform .form-group input:focus-visible {
+  outline: none;
+}
+
 #contactform .form-group select {
   width: 100%;
   background-color: transparent;
@@ -11903,6 +11952,10 @@ footer hr {
   border-bottom: solid white 2px;
   padding: 12px 0;
   color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
 }
 
 #contactform button[type=submit] {
@@ -11929,5 +11982,16 @@ footer hr {
   height: 100vh;
   padding: 0 !important;
   margin: 0 !important;
+}
+
+.fa-sort-down {
+  position: absolute;
+  font-size: 25px;
+  right: 30px;
+  top: 75%;
+}
+
+.fa-sort-down:hover {
+  cursor: pointer;
 }
 

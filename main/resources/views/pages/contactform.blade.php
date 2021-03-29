@@ -2,6 +2,7 @@
 @push('script')
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" ></script>
 <script src="{{asset('js/map.js')}}" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 @endpush
 @section('content')
 
@@ -19,8 +20,8 @@
                 <div class="row">
                   <div class="col-12">
                      <div class="form-group">
-                       <select name="mailObject" id="">
-                           <option value="">Vorrei conoscervi per parlare di...</option>
+                       <select name="mailObject" id="" required>
+                           <option value="">Vorrei conoscervi per parlare di... </option>
                            <option value="Collaborazione">Collaborare su un progetto</option>
                            <option value="Consulenza">Chiedere una consulenza</option>
                            <option value="Altre info">Altro</option>
@@ -29,17 +30,17 @@
                   </div>  
                   <div class="col-12 col-md-6">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Nome*">
+                        <input type="text" name="name" placeholder="Nome*" required>
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
                     <div class="form-group">
-                        <input type="text" name="company-name" placeholder="Nome della tua azienda*">
+                        <input type="text" name="company-name" placeholder="Nome della tua azienda*" required>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                        <input type="mail" name="mail" placeholder="Indirizzo email*">
+                        <input type="mail" name="mail" placeholder="Indirizzo email*" required>
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
@@ -49,7 +50,7 @@
                   </div>
                   <div class="col-12 col-md-6">
                     <div class="form-group">
-                        <select name="contact" id="">
+                        <select name="contact" id="" required>
                             <option value="">Scegli*</option>
                             <option value="internet">internet</option>
                             <option value="social media">vi ho incontrati sui social (Facebook , Instagram ,Linkedin , altro..)</option>
@@ -60,15 +61,13 @@
                   </div>
                   <div class="col-12">
                       <div class="form-group">
-                      
-                            <input type="textarea" placeholder="Raccontaci brevemente il tuo progetto" rows="1" name="message" id=""></textarea>
-        
+                            <input type="textarea" placeholder="Raccontaci brevemente il tuo progetto" rows="1" name="message" id="" required></textarea>
                       </div>
                   </div>
                   <div id="checkboxes-contactform" class="col-12">
                     <div  class="form-group">
                        <div class="d-flex align-items-baseline">
-                           <input type="checkbox" name="privacy" id="">
+                           <input type="checkbox" name="privacy" id="" required>
                            <label for="privacy">(Richiesto) Acconsento al trattamento dei dati personali - informativa</label> 
                         </div>
                     </div>
@@ -111,4 +110,5 @@
 
         </div>
     </div>
+    @include('components.footer')
 @endsection

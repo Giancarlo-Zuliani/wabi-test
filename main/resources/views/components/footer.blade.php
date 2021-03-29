@@ -1,13 +1,13 @@
 <footer>
-    <div class="container w-90 pt-5">
+    <div class="container w-90 py-5">
         <hr>
         <div class="row my-3">
             <h3 class="col-lg-6 col-md-12 my-2">WABi | white paper <strong>black mirror</strong></h3>
             <p class="col-lg-6 col-md-12 my-2">T. +39 0438 794015 | M. info@wabi.it</p>
        </div>
        
-       <div class="row my-3">
-           <p class="col-lg-5 col-md-12 my-2">
+       <div class="row ">
+           <p class="col-lg-5 col-md-12 mt-4">
                ©  WABi lab Snc. All rights reserved 2019 |
                <a href="#"> Privacy </a> |
                <a href="#"> Informativa </a> |

@@ -39,9 +39,5 @@
     
     @include('components.footer')
 
-    @auth
-        <div>CULO!</div>
-    @endauth
-
 </body>
 </html>
