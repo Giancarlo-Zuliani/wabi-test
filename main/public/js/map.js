@@ -1,7 +1,8 @@
+//COORDS
 let coord = [45.87023881566037, 12.374845713747328];
-
+//INIT MAP
 var map = L.map('map').setView(coord, 13);
-
+//SET MAP GREYSCALE
 L.TileLayer.Grayscale = L.TileLayer.extend({
     options: {
         quotaRed: 21,
@@ -55,11 +56,14 @@ L.tileLayer.grayscale = function(url, options) {
     return new L.TileLayer.Grayscale(url, options);
 };
 
-let icon = new L.Icon.Default();
-icon.options.shadowSize = [0, 0];
-
-L.marker(coord, { icon: icon }).addTo(map);
-
+//ADD GRAYSCALE LAYER ON MAP
 L.tileLayer.grayscale('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
 }).addTo(map);
+
+//SET ICON
+let icon = new L.Icon.Default();
+icon.options.shadowSize = [0, 0];
+
+//PUT ICON ON MAP
+L.marker(coord, { icon: icon }).addTo(map);

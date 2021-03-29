@@ -71,24 +71,6 @@ a {
     font-weight: bolder;
 }
 
-@-webkit-keyframes flash {
-    0% {
-        opacity: .4;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes flash {
-    0% {
-        opacity: .4;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 .close {
     position: absolute;
     right: 32px;
@@ -149,4 +131,23 @@ a {
 #clients-title {
     color: #fff;
     font-size: 1.5rem;
+}
+
+//FLASH ANIMATION ON PROJECTS HOVER
+@-webkit-keyframes flash {
+    0% {
+        opacity: .4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: .4;
+    }
+    100% {
+        opacity: 1;
+    }
 }

@@ -9,7 +9,7 @@
 <body>
   <div style="text-align:center;width:80%; margin:25px auto">
     <h2>{{$form['mailObject']}}</h2>
-    <ul>
+    <ul style="list-style: none">
         <li>Nome : {{$form['name']}}</li>
         <li>Nome azienda : {{$form['company-name']}}</li>
         <li>Mail : {{$form['mail']}}</li>

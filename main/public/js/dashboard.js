@@ -1,6 +1,7 @@
 let pictureForms = document.getElementsByClassName('hidden-picture-form');
 let addButtons = document.getElementsByClassName('fa-plus-square');
 
+//TOGGLE ADD PICTURE BOX 
 for (let i = 0; i < addButtons.length; i++) {
     addButtons[i].addEventListener('click', function() {
         pictureForms[i].style.display === "block" ?
@@ -13,6 +14,7 @@ let deleteProjectsButtons = document.getElementsByClassName('dashboard-delete-bu
 let deleteModals = document.getElementsByClassName('dashboard-delete-project-modal');
 let closeModal = document.getElementsByClassName('dashboard-close-modal-button');
 
+//TOGGLE ADD PROJECT BOX
 for (let i = 0; i < deleteProjectsButtons.length; i++) {
     deleteProjectsButtons[i].addEventListener('click', function() {
         deleteModals[i].style.display = "block";

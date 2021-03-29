@@ -11641,26 +11641,6 @@ a:hover {
   font-weight: bolder;
 }
 
-@-webkit-keyframes flash {
-  0% {
-    opacity: 0.4;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes flash {
-  0% {
-    opacity: 0.4;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 .close {
   position: absolute;
   right: 32px;
@@ -11726,6 +11706,26 @@ a:hover {
   font-size: 1.5rem;
 }
 
+@-webkit-keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 header {
   color: white;
 }
@@ -11745,7 +11745,7 @@ header #navbar {
 }
 
 header #navbar img {
-  height: 70%;
+  width: 10vw;
 }
 
 header #navbar a {
@@ -11769,7 +11769,7 @@ header #navbar a {
   background-color: white;
   position: absolute;
   left: 11%;
-  top: 43%;
+  top: 45%;
 }
 
 footer {
@@ -11812,7 +11812,7 @@ footer hr {
 }
 
 #dashboard-header img {
-  width: 15%;
+  width: 20vh;
 }
 
 #dashboard hr {
@@ -11939,7 +11939,7 @@ footer hr {
 }
 
 #contact-form-header {
-  width: 15%;
+  width: 20vh;
   margin: auto;
 }
 

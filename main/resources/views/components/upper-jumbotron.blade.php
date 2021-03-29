@@ -1,3 +1,4 @@
+{{-- UPPER JUMBOTRON --}}
 <section id="upper-jumbotron" class="container m-auto">
         <div class="row h-100"> 
             <div id="upper-jumbo-text" class="m-auto">

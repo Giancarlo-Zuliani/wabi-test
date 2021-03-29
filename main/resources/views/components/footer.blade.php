@@ -1,3 +1,4 @@
+{{-- FOOTER --}}
 <footer>
     <div class="container w-90 py-5">
         <hr>

@@ -1,3 +1,4 @@
+{{-- BUTTON JUMBOTRON --}}
 <section id="bottom-jumbotron">
     <div class="container-fluid">
         <div class="row my-auto">

@@ -8,7 +8,7 @@
 
     <div class="container">
         <div class="row my-5">
-            <img id="contact-form-header" src="https://www.wabi.it/img/logo.svg" alt="">
+            <a href="{{route('index')}}"><img id="contact-form-header" src="https://www.wabi.it/img/logo.svg" alt=""></a>
         </div>
         <div class="row">
             <div class="col-12">
