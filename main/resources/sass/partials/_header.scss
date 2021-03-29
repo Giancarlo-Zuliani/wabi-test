@@ -10,7 +10,7 @@ header {
         height: 100px;
         @include dflex(row, space-between, center);
         img {
-            width: 10vw;
+            width: 10vh;
         }
         a {
             font-size: 1.2rem;

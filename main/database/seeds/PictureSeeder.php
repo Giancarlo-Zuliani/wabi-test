@@ -13,7 +13,7 @@ class PictureSeeder extends Seeder
      */
     public function run()
     {
-        factory(Picture::class, 30)
+        factory(Picture::class, 48)
         ->make()
         ->each(function($pic){
             $proj = Project::inRandomOrder() -> first();

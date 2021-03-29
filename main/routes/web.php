@@ -42,6 +42,6 @@ Route::post('/add-image/{id}' , 'MainController@updateImage')
 Route::get('/delete/{id}' , 'MainController@deleteImage')
         -> name('delete-image');
 
-        /* CONTACT MAIL FORM ROUTE */
+/* CONTACT MAIL FORM ROUTE */
 Route::post('/contactform/send' , 'MainController@sendContactMail')
         -> name('send-mail');
