@@ -8,25 +8,39 @@
 <div id="dashboard-header" class="text-center my-5 py-5">
     <img class="vertical" src="https://www.wabi.it/img/logo.svg" alt="">
 </div>
-<div class="container">
-    <div class="row">
-        @if($errors)
-        <h4>{{$errors -> first()}}</h4>
-        @endif
-    </div>
-</div>
 <div class="container text-center" id="dashboard-console">
         <form class="row text-center w-100 m-auto" action="{{route('create-project')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
             <div class="col-12 m-auto">
                 <input type="text" name="title" placeholder="new project name" required>
+                    @error('title')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span> 
+                    @enderror
                 <input type="text" name="description" placeholder="new project description" required>
+                    @error('description')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span> 
+                    @enderror
             </div>
             <div class="col-12 m-auto">
                 <input type="file" name="propic" required>
+                    @error('propic')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span> 
+                    @enderror
                 <input type="text" name="imgcaption" placeholder="image caption" required>
+                    @error('imgcaption')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span> 
+                    @enderror
             </div>
+            
             <div class="col-12 m-auto">    
                 <button type="submit">Salva</button>
             </div>

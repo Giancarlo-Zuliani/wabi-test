@@ -8,7 +8,9 @@ use App\Mail\contacForm;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation;
+use Illuminate\Support\Facades\Validator;
+
+
 //Models
 use App\User;
 use App\Project;
@@ -55,8 +57,22 @@ class MainController extends Controller
         }
     }
     public function createProject(Request $request){
-        $data = $request -> all();
-        dd($data);
+        $data = $request -> all();        
+        Validator::make($data,[
+            'title' => 'required|string|min:3',
+            'description' => 'required|string|min:5',
+            'propic' => 'required',
+            'imgcaption' => 'required|string|min:5'
+        ],[
+            'title.min' => 'Minimo 3 caratteri per il titolo del progetto',
+            'description.min' => 'Minimo 5 caratteri per la descrizione del progetto',
+            'title.required' => ' Titolo richiesto',
+            'description.required' => 'Descrizione richiesta',
+            'propic.required' => 'Immagine del progetto richiesta',
+            'imgcaption.min' => 'Descrizione dell immagine richiesta',
+            'imgcaption.required' => 'Descrizione dell immagine richiesta'
+        ])->validate();
+
         $prj = ['title' => $request -> title , 'description' => $request -> description];
         $image = $request -> file('propic');
         $ext = $image -> getClientOriginalExtension();

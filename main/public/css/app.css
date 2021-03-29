@@ -11912,6 +11912,12 @@ footer hr {
   outline: none;
 }
 
+.invalid-feedback {
+  color: red;
+  text-align: center;
+  display: block !important;
+}
+
 #contact-form-header {
   width: 15%;
   margin: auto;
