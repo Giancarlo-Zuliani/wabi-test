@@ -4,15 +4,15 @@
 <script src="{{asset('js/map.js')}}" defer></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 @endpush
-@section('content')
 
-    <div class="container">
-        <div class="row my-5">
-            <a href="{{route('index')}}"><img id="contact-form-header" src="https://www.wabi.it/img/logo.svg" alt=""></a>
-        </div>
+
+@section('content')
+<div id="animated-bg" style="background-image: url('{{asset('storage/snow.gif')}}')"></div>
+
+    <div class="container-fluid w-75 m-auto p-5">
         <div class="row">
             <div class="col-12">
-                <h1 style="font-size:9vw">tell us your story.</h1>
+                <h1 id="contact-form-title">tell us your story.</h1>
             </div>
             <form id="contactform" action="{{route('send-mail')}}" method="POST">
                 @csrf
@@ -126,19 +126,21 @@
                 </div>
             </form>
         </div>
-        <div id="contact-form-infos" class="row text-center mb-5">
-            <hr>
-            <div class="col-md-4 col-12 mb-4">
-                <h4 style="color:white;">WABi lab snc</h4>
+    </div>
+        <div class="container-fluid px-5 ">
+            <div id="contact-form-infos" class="row text-center mb-5">
+                <hr>
+                <div class="col-md-4 col-12 mb-4">
+                    <h4 style="color:white;">WABi lab snc</h4>
                 <br>
                 <h4>P.IVA 04341410266</h4>
             </div>
             <div class="col-md-4 col-12 mb-4">
-                <h5>Via del Lavoro , 18</h5>
+                <h6 class="m-0">Via del Lavoro , 18</h6>
                 <br>
-                <h5>31013 Cimavilla di Codognè</h5>
+                <h6 class="m-0">31013 Cimavilla di Codognè</h6>
                 <br>
-                <h5>Treviso - Italy</h5>
+                <h6 class="m-0">Treviso - Italy</h6>
             </div>
             <div class="col-md-4 col-12 mb-4">
                 <h4>+39 0438 794015</h4>

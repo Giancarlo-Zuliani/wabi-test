@@ -11676,14 +11676,15 @@ a:hover {
 }
 
 #bottom-jumbotron {
-  padding-top: 20%;
-  height: 110vh;
+  padding-top: 5%;
+  height: 50vh;
 }
 
 #bottom-jumbotron h1 {
   color: white;
   min-width: 100%;
-  font-size: 6vw;
+  font-size: 7vw;
+  font-weight: bolder;
   padding-left: 15%;
 }
 
@@ -11698,7 +11699,9 @@ a:hover {
 }
 
 #bottom-jumbotron p {
-  font-size: 3vh;
+  color: #999999;
+  font-size: 2vh;
+  margin-top: 15%;
 }
 
 #clients-title {
@@ -11728,6 +11731,7 @@ a:hover {
 
 header {
   color: white;
+  height: 25vh;
 }
 
 header #navbar {
@@ -11745,7 +11749,7 @@ header #navbar {
 }
 
 header #navbar img {
-  width: 10vw;
+  width: 10vh;
 }
 
 header #navbar a {
@@ -11759,22 +11763,28 @@ header #navbar a {
 }
 
 #upper-jumbotron h1 {
-  font-size: 9vw;
+  position: relative;
+  top: 40%;
+  font-size: 8vw;
 }
 
-#upper-jumbo-text::before {
+#upper-jumbotron h1:first-child:before {
   content: "";
-  width: 9%;
+  width: 15%;
   padding: 1px;
   background-color: white;
   position: absolute;
-  left: 11%;
-  top: 45%;
+  left: -15%;
+  top: 60%;
+}
+
+#upper-jumbotron h1:lastchild {
+  margin-bottom: 5%;
 }
 
 footer {
   background-color: black;
-  color: white;
+  color: #999999;
   min-height: 25vh;
 }
 
@@ -11782,6 +11792,12 @@ footer hr {
   height: 1px;
   background-color: #fff;
   width: 100%;
+}
+
+footer p,
+footer a,
+footer h3 {
+  color: #999999;
 }
 
 #bottom-jumbotron {
@@ -11938,11 +11954,6 @@ footer hr {
   display: none;
 }
 
-#contact-form-header {
-  width: 20vh;
-  margin: auto;
-}
-
 #contactform {
   overflow-x: hidden;
   margin-bottom: 20vh;
@@ -11987,7 +11998,7 @@ footer hr {
 #contactform button[type=submit] {
   width: 99%;
   margin: auto;
-  height: 7vh !important;
+  height: 4vh !important;
   border: none;
 }
 
@@ -12001,6 +12012,15 @@ footer hr {
   padding: 1px;
   width: 100%;
   margin-bottom: 10vh;
+}
+
+#contact-form-infos h1,
+#contact-form-infos h2,
+#contact-form-infos h3,
+#contact-form-infos h4,
+#contact-form-infos h5,
+#contact-form-infos h6 {
+  color: #999999;
 }
 
 #map {
@@ -12019,5 +12039,20 @@ footer hr {
 
 .fa-sort-down:hover {
   cursor: pointer;
+}
+
+#contact-form-title {
+  color: #ffffff;
+  font-size: 8vw;
+}
+
+#contact-form-title:before {
+  content: "";
+  width: 10%;
+  position: absolute;
+  left: -15%;
+  top: 50%;
+  background-color: #fff;
+  padding-top: 1px;
 }
 

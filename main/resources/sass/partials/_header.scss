@@ -1,5 +1,6 @@
 header {
     color: white;
+    height: 25vh;
     #navbar {
         z-index: 999;
         left: 0;
@@ -23,16 +24,23 @@ header {
     height: 100vh;
     margin-top: 30%;
     h1 {
-        font-size: 9vw;
+        position: relative;
+        top: 40%;
+        font-size: 8vw;
+        &::before {}
     }
-}
-
-#upper-jumbo-text::before {
-    content: "";
-    width: 9%;
-    padding: 1px;
-    background-color: white;
-    position: absolute;
-    left: 11%;
-    top: 45%;
+    h1:first-child {
+        &:before {
+            content: "";
+            width: 15%;
+            padding: 1px;
+            background-color: white;
+            position: absolute;
+            left: -15%;
+            top: 60%;
+        }
+    }
+    h1:lastchild {
+        margin-bottom: 5%;
+    }
 }

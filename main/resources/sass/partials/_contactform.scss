@@ -1,8 +1,3 @@
-#contact-form-header {
-    width: 20vh;
-    margin: auto;
-}
-
 #contactform {
     overflow-x: hidden;
     margin-bottom: 20vh;
@@ -41,7 +36,7 @@
     button[type=submit] {
         width: 99%;
         margin: auto;
-        height: 7vh!important;
+        height: 4vh!important;
         border: none;
     }
 }
@@ -60,6 +55,14 @@
         width: 100%;
         margin-bottom: 10vh;
     }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #999999;
+    }
 }
 
 #map {
@@ -76,5 +79,19 @@
     top: 75%;
     &:hover {
         cursor: pointer;
+    }
+}
+
+#contact-form-title {
+    color: #ffffff;
+    font-size: 8vw;
+    &:before {
+        content: "";
+        width: 10%;
+        position: absolute;
+        left: -15%;
+        top: 50%;
+        background-color: #fff;
+        padding-top: 1px;
     }
 }

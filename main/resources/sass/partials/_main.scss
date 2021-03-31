@@ -106,12 +106,13 @@ a {
 }
 
 #bottom-jumbotron {
-    padding-top: 20%;
-    height: 110vh;
+    padding-top: 5%;
+    height: 50vh;
     h1 {
         color: white;
         min-width: 100%;
-        font-size: 6vw;
+        font-size: 7vw;
+        font-weight: bolder;
         padding-left: 15%;
         &:before {
             content: "";
@@ -124,7 +125,9 @@ a {
         }
     }
     p {
-        font-size: 3vh;
+        color: #999999;
+        font-size: 2vh;
+        margin-top: 15%;
     }
 }
 

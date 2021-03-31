@@ -52,7 +52,7 @@
 
 {{-- CLIENTS SVGS --}}
 @section('clients-logos')
-    <div class="container">
+    <div class="container-fluid p-5">
         <div class="row">
             <div class="col-12 text-left m-auto p-4">
                 <h5 id="clients-title" class="w-100 border-bottom border-white py-5">
